@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_NOT_IN = 'isNotIn';
 
@@ -21,7 +21,7 @@ export function IsNotIn(values: readonly any[], validationOptions?: ValidationOp
       validator: {
         validate: (value, args): boolean => isNotIn(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property should not be one of the following values: $constraint1',
+          eachPrefix => eachPrefix + '$property não pode ser um dos seguintes valores: $constraint1',
           validationOptions
         ),
       },

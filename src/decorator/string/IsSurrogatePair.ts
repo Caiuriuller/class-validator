@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isSurrogatePairValidator from 'validator/lib/isSurrogatePair';
+import isSurrogatePairValidator from 'validator/lib/isSurrogatePair'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_SURROGATE_PAIR = 'isSurrogatePair';
 
@@ -23,7 +23,7 @@ export function IsSurrogatePair(validationOptions?: ValidationOptions): Property
       validator: {
         validate: (value, args): boolean => isSurrogatePair(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must contain any surrogate pairs chars',
+          eachPrefix => eachPrefix + '$property deve conter algum caracter de substituicao de pares',
           validationOptions
         ),
       },

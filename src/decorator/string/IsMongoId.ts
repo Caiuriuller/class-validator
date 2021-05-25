@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isMongoIdValidator from 'validator/lib/isMongoId';
+import isMongoIdValidator from 'validator/lib/isMongoId'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_MONGO_ID = 'isMongoId';
 
@@ -22,7 +22,7 @@ export function IsMongoId(validationOptions?: ValidationOptions): PropertyDecora
       name: IS_MONGO_ID,
       validator: {
         validate: (value, args): boolean => isMongoId(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a mongodb id', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser o id de um mongodb', validationOptions),
       },
     },
     validationOptions

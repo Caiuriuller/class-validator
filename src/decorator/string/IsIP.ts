@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isIPValidator from 'validator/lib/isIP';
+import isIPValidator from 'validator/lib/isIP'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export type IsIpVersion = '4' | '6' | 4 | 6;
 
@@ -26,7 +26,7 @@ export function IsIP(version?: IsIpVersion, validationOptions?: ValidationOption
       constraints: [version],
       validator: {
         validate: (value, args): boolean => isIP(value, args.constraints[0]),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be an ip address', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser um endereco de IP', validationOptions),
       },
     },
     validationOptions

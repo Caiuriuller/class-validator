@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const ARRAY_UNIQUE = 'arrayUnique';
 export type ArrayUniqueIdentifier<T = any> = (o: T) => any;
@@ -35,7 +35,7 @@ export function ArrayUnique<T = any>(
       name: ARRAY_UNIQUE,
       validator: {
         validate: (value, args): boolean => arrayUnique(value, identifier),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + "All $property's elements must be unique", options),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + "Todos $property's elementos devem ser unicos", options),
       },
     },
     options

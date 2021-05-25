@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isEANValidator from 'validator/lib/isEAN';
+import isEANValidator from 'validator/lib/isEAN'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_EAN = 'isEAN';
 
@@ -23,7 +23,7 @@ export function IsEAN(validationOptions?: ValidationOptions): PropertyDecorator 
       validator: {
         validate: (value, args): boolean => isEAN(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be an EAN (European Article Number)',
+          eachPrefix => eachPrefix + '$property deve ser um EAN (European Article Number)',
           validationOptions
         ),
       },

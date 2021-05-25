@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import { parsePhoneNumberFromString, CountryCode } from 'libphonenumber-js';
+import { CountryCode, parsePhoneNumberFromString } from 'libphonenumber-js'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_PHONE_NUMBER = 'isPhoneNumber';
 
@@ -38,7 +38,7 @@ export function IsPhoneNumber(region?: CountryCode, validationOptions?: Validati
       validator: {
         validate: (value, args): boolean => isPhoneNumber(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a valid phone number',
+          eachPrefix => eachPrefix + '$property deve ser um valor de telefone celular valido',
           validationOptions
         ),
       },

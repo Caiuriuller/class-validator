@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isAlphanumericValidator from 'validator/lib/isAlphanumeric';
-import ValidatorJS from 'validator';
+import ValidatorJS from 'validator'
+import isAlphanumericValidator from 'validator/lib/isAlphanumeric'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_ALPHANUMERIC = 'isAlphanumeric';
 
@@ -25,7 +25,7 @@ export function IsAlphanumeric(locale?: string, validationOptions?: ValidationOp
       validator: {
         validate: (value, args): boolean => isAlphanumeric(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must contain only letters and numbers',
+          eachPrefix => eachPrefix + '$property deve conter somente letras e numeros',
           validationOptions
         ),
       },

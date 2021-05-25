@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isBase64Validator from 'validator/lib/isBase64';
+import isBase64Validator from 'validator/lib/isBase64'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_BASE64 = 'isBase64';
 
@@ -22,7 +22,7 @@ export function IsBase64(validationOptions?: ValidationOptions): PropertyDecorat
       name: IS_BASE64,
       validator: {
         validate: (value, args): boolean => isBase64(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be base64 encoded', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser base64 encriptado', validationOptions),
       },
     },
     validationOptions

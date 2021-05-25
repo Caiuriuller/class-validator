@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isBase32Validator from 'validator/lib/isBase32';
+import isBase32Validator from 'validator/lib/isBase32'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_BASE32 = 'isBase32';
 
@@ -22,7 +22,7 @@ export function IsBase32(validationOptions?: ValidationOptions): PropertyDecorat
       name: IS_BASE32,
       validator: {
         validate: (value, args): boolean => isBase32(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be base32 encoded', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser base32 encriptado', validationOptions),
       },
     },
     validationOptions

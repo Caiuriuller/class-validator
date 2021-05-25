@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_INSTANCE = 'isInstance';
 
@@ -27,9 +27,9 @@ export function IsInstance(
         validate: (value, args): boolean => isInstance(value, args.constraints[0]),
         defaultMessage: buildMessage((eachPrefix, args) => {
           if (args.constraints[0]) {
-            return eachPrefix + `$property must be an instance of ${args.constraints[0].name as string}`;
+            return eachPrefix + `$property deve ser uma instancia de ${args.constraints[0].name as string}`;
           } else {
-            return eachPrefix + `${IS_INSTANCE} decorator expects and object as value, but got falsy value.`;
+            return eachPrefix + `${IS_INSTANCE} o decorator espera um objeto como valor.`;
           }
         }, validationOptions),
       },

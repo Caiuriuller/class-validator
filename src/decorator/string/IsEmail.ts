@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isEmailValidator from 'validator/lib/isEmail';
-import ValidatorJS from 'validator';
+import ValidatorJS from 'validator'
+import isEmailValidator from 'validator/lib/isEmail'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_EMAIL = 'isEmail';
 
@@ -27,7 +27,7 @@ export function IsEmail(
       constraints: [options],
       validator: {
         validate: (value, args): boolean => isEmail(value, args.constraints[0]),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be an email', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser um email', validationOptions),
       },
     },
     validationOptions

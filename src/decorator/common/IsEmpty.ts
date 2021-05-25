@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_EMPTY = 'isEmpty';
 
@@ -19,7 +19,7 @@ export function IsEmpty(validationOptions?: ValidationOptions): PropertyDecorato
       name: IS_EMPTY,
       validator: {
         validate: (value, args): boolean => isEmpty(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be empty', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser vazio', validationOptions),
       },
     },
     validationOptions

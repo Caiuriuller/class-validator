@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import containsValidator from 'validator/lib/contains';
+import containsValidator from 'validator/lib/contains'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const CONTAINS = 'contains';
 
@@ -24,7 +24,7 @@ export function Contains(seed: string, validationOptions?: ValidationOptions): P
       validator: {
         validate: (value, args): boolean => contains(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must contain a $constraint1 string',
+          eachPrefix => eachPrefix + '$property deve conter $constraint1 string',
           validationOptions
         ),
       },

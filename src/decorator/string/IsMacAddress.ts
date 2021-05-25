@@ -1,7 +1,7 @@
-import { ValidationOptions, isValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isMacAddressValidator from 'validator/lib/isMACAddress';
-import ValidatorJS from 'validator';
+import ValidatorJS from 'validator'
+import isMacAddressValidator from 'validator/lib/isMACAddress'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { isValidationOptions, ValidationOptions } from '../ValidationOptions'
 
 export const IS_MAC_ADDRESS = 'isMacAddress';
 
@@ -37,7 +37,7 @@ export function IsMACAddress(
       constraints: [options],
       validator: {
         validate: (value, args): boolean => isMACAddress(value, options),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a MAC Address', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser um endereco MAC', validationOptions),
       },
     },
     validationOptions

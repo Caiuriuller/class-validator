@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isHalfWidthValidator from 'validator/lib/isHalfWidth';
+import isHalfWidthValidator from 'validator/lib/isHalfWidth'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_HALF_WIDTH = 'isHalfWidth';
 
@@ -23,7 +23,7 @@ export function IsHalfWidth(validationOptions?: ValidationOptions): PropertyDeco
       validator: {
         validate: (value, args): boolean => isHalfWidth(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must contain a half-width characters',
+          eachPrefix => eachPrefix + '$property deve ser metade do tamanho de caracteres',
           validationOptions
         ),
       },

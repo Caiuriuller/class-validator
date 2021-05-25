@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isUrlValidator from 'validator/lib/isURL';
-import ValidatorJS from 'validator';
+import ValidatorJS from 'validator'
+import isUrlValidator from 'validator/lib/isURL'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_URL = 'isUrl';
 
@@ -24,7 +24,7 @@ export function IsUrl(options?: ValidatorJS.IsURLOptions, validationOptions?: Va
       constraints: [options],
       validator: {
         validate: (value, args): boolean => isURL(value, args.constraints[0]),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be an URL address', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser um endereco URL', validationOptions),
       },
     },
     validationOptions

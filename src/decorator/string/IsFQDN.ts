@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isFqdnValidator from 'validator/lib/isFQDN';
-import ValidatorJS from 'validator';
+import ValidatorJS from 'validator'
+import isFqdnValidator from 'validator/lib/isFQDN'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_FQDN = 'isFqdn';
 
@@ -25,7 +25,7 @@ export function IsFQDN(options?: ValidatorJS.IsFQDNOptions, validationOptions?: 
       validator: {
         validate: (value, args): boolean => isFQDN(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a valid domain name',
+          eachPrefix => eachPrefix + '$property deve ser um nome de dominio valido',
           validationOptions
         ),
       },

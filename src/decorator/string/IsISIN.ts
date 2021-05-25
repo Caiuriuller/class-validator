@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isIsinValidator from 'validator/lib/isISIN';
+import isIsinValidator from 'validator/lib/isISIN'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_ISIN = 'isIsin';
 
@@ -23,7 +23,7 @@ export function IsISIN(validationOptions?: ValidationOptions): PropertyDecorator
       validator: {
         validate: (value, args): boolean => isISIN(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be an ISIN (stock/security identifier)',
+          eachPrefix => eachPrefix + '$property deve ser um ISIN (acao/identificador de seguranca)',
           validationOptions
         ),
       },

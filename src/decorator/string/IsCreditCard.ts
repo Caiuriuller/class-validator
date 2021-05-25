@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isCreditCardValidator from 'validator/lib/isCreditCard';
+import isCreditCardValidator from 'validator/lib/isCreditCard'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_CREDIT_CARD = 'isCreditCard';
 
@@ -22,7 +22,7 @@ export function IsCreditCard(validationOptions?: ValidationOptions): PropertyDec
       name: IS_CREDIT_CARD,
       validator: {
         validate: (value, args): boolean => isCreditCard(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a credit card', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser um cartao de credito', validationOptions),
       },
     },
     validationOptions

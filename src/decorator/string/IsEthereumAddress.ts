@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isEthereumAddressValidator from 'validator/lib/isEthereumAddress';
+import isEthereumAddressValidator from 'validator/lib/isEthereumAddress'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_ETHEREUM_ADDRESS = 'isEthereumAddress';
 
@@ -23,7 +23,7 @@ export function IsEthereumAddress(validationOptions?: ValidationOptions): Proper
       validator: {
         validate: (value, args): boolean => isEthereumAddress(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be an Ethereum address',
+          eachPrefix => eachPrefix + '$property deve ser um valor de endereco Ethereum',
           validationOptions
         ),
       },

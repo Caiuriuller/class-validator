@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isIso8601Validator from 'validator/lib/isISO8601';
-import ValidatorJS from 'validator';
+import ValidatorJS from 'validator'
+import isIso8601Validator from 'validator/lib/isISO8601'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_ISO8601 = 'isIso8601';
 
@@ -30,7 +30,7 @@ export function IsISO8601(
       validator: {
         validate: (value, args): boolean => isISO8601(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a valid ISO 8601 date string',
+          eachPrefix => eachPrefix + '$property deve ser um valor ISO 8601 date string válido',
           validationOptions
         ),
       },

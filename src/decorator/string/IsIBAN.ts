@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isIBANValidator from 'validator/lib/isIBAN';
+import isIBANValidator from 'validator/lib/isIBAN'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_IBAN = 'isIBAN';
 
@@ -22,7 +22,7 @@ export function IsIBAN(validationOptions?: ValidationOptions): PropertyDecorator
       name: IS_IBAN,
       validator: {
         validate: (value, args): boolean => isIBAN(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be an IBAN', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser um IBAN', validationOptions),
       },
     },
     validationOptions

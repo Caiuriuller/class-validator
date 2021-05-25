@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isLengthValidator from 'validator/lib/isLength';
+import isLengthValidator from 'validator/lib/isLength'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_LENGTH = 'isLength';
 
@@ -27,13 +27,13 @@ export function Length(min: number, max?: number, validationOptions?: Validation
           const isMinLength = args.constraints[0] !== null && args.constraints[0] !== undefined;
           const isMaxLength = args.constraints[1] !== null && args.constraints[1] !== undefined;
           if (isMinLength && (!args.value || args.value.length < args.constraints[0])) {
-            return eachPrefix + '$property must be longer than or equal to $constraint1 characters';
+            return eachPrefix + '$property deve ser maior ou igual que $constraint1 caracteres';
           } else if (isMaxLength && args.value.length > args.constraints[1]) {
-            return eachPrefix + '$property must be shorter than or equal to $constraint2 characters';
+            return eachPrefix + '$property deve ser menor ou igual a $constraint2 caracteres';
           }
           return (
             eachPrefix +
-            '$property must be longer than or equal to $constraint1 and shorter than or equal to $constraint2 characters'
+            '$property deve ser maior que ou igual a $constraint1 e menor que ou igual a $constraint2 caracteres'
           );
         }, validationOptions),
       },

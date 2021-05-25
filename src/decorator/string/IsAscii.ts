@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isAsciiValidator from 'validator/lib/isAscii';
+import isAsciiValidator from 'validator/lib/isAscii'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_ASCII = 'isAscii';
 
@@ -23,7 +23,7 @@ export function IsAscii(validationOptions?: ValidationOptions): PropertyDecorato
       validator: {
         validate: (value, args): boolean => isAscii(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must contain only ASCII characters',
+          eachPrefix => eachPrefix + '$property deve conter somente caracteres ASCII',
           validationOptions
         ),
       },

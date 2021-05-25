@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_STRING = 'isString';
 
@@ -19,7 +19,7 @@ export function IsString(validationOptions?: ValidationOptions): PropertyDecorat
       name: IS_STRING,
       validator: {
         validate: (value, args): boolean => isString(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a string', validationOptions),
+        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property deve ser uma string', validationOptions),
       },
     },
     validationOptions

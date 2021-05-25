@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isDataURIValidator from 'validator/lib/isDataURI';
+import isDataURIValidator from 'validator/lib/isDataURI'
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_DATA_URI = 'isDataURI';
 
@@ -23,7 +23,7 @@ export function IsDataURI(validationOptions?: ValidationOptions): PropertyDecora
       validator: {
         validate: (value, args): boolean => isDataURI(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a data uri format',
+          eachPrefix => eachPrefix + '$property deve ser um dado com o formato uri',
           validationOptions
         ),
       },

@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const ARRAY_MIN_SIZE = 'arrayMinSize';
 
@@ -23,7 +23,7 @@ export function ArrayMinSize(min: number, validationOptions?: ValidationOptions)
       validator: {
         validate: (value, args): boolean => arrayMinSize(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must contain at least $constraint1 elements',
+          eachPrefix => eachPrefix + '$property deve conter ao menos $constraint1 elementos',
           validationOptions
         ),
       },

@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { buildMessage, ValidateBy } from '../common/ValidateBy'
+import { ValidationOptions } from '../ValidationOptions'
 
 export const IS_NUMBER = 'isNumber';
 
@@ -52,7 +52,7 @@ export function IsNumber(options: IsNumberOptions = {}, validationOptions?: Vali
       validator: {
         validate: (value, args): boolean => isNumber(value, args.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a number conforming to the specified constraints',
+          eachPrefix => eachPrefix + '$property deve ser um numerico',
           validationOptions
         ),
       },
