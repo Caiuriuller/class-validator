@@ -1,6 +1,6 @@
 {
   "name": "@caiuriuller/class-validator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Decorator-based property validation for classes.",
   "author": "Caiuri <caiuri@multiplier.com.br>",
   "license": "MIT",
