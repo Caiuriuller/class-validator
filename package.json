@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "@caiuriuller/class-validator",
-  "version": "0.0.3",
-=======
-  "name": "class-validator",
-  "version": "0.13.1",
->>>>>>> parent of 5bfb513 (Feat: retirada pastas sem uso e bump de versao)
+  "version": "0.0.7",
   "description": "Decorator-based property validation for classes.",
   "author": "TypeStack contributors",
   "license": "MIT",
