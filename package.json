@@ -1,8 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "@caiuriuller/class-validator",
   "version": "0.0.3",
+=======
+  "name": "class-validator",
+  "version": "0.13.1",
+>>>>>>> parent of 5bfb513 (Feat: retirada pastas sem uso e bump de versao)
   "description": "Decorator-based property validation for classes.",
-  "author": "Caiuri <caiuri@multiplier.com.br>",
+  "author": "TypeStack contributors",
   "license": "MIT",
   "sideEffects": false,
   "main": "./cjs/index.js",
@@ -11,10 +16,7 @@
   "typings": "./types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/caiuriuller/class-validator.git"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "url": "https://github.com/typestack/class-validator.git"
   },
   "tags": [
     "validator",
@@ -22,7 +24,6 @@
     "decorators",
     "typescript"
   ],
-  
   "scripts": {
     "build": "npm run build:cjs",
     "build:clean": "rimraf build",
